@@ -4,6 +4,7 @@ import com.example.springdata_asterixapi.model.Asterix;
 import com.example.springdata_asterixapi.model.dtos.AsterixDTO;
 import com.example.springdata_asterixapi.repository.AsterixRepo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -30,5 +31,10 @@ public class AsterixService {
        Asterix asterix=new Asterix(asterixDTO.getId(),asterixDTO.getName(),asterixDTO.getAge(),asterixDTO.getProfession(), UUID.randomUUID().toString());
        return asterixRepo.save(asterix);
 
+    }
+
+    public Asterix delete(String id) {
+      asterixRepo.deleteById(id);
+      return null;
     }
 }

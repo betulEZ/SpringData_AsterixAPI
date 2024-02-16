@@ -36,5 +36,11 @@ public class AsterixController {
         return asterixService.save(asterixDTO);
     }
 
+    @DeleteMapping("/{id}")
+    public Asterix delete(@RequestParam String id){
+        return  asterixService.delete(id);
+
+    }
+
 
 }
