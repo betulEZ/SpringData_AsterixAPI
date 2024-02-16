@@ -2,3 +2,6 @@
 target/
 .idea
 *.iml
+mvnw.cmd
+mvnw
+HELP.md
